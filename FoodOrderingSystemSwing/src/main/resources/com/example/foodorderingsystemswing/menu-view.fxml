@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="20" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.foodorderingsystemswing.OrderController">
+    <padding>
+        <Insets top= "20" right="20" bottom="20" left="20"/>
+    </padding>
+    <fx:define>
+        <ToggleGroup fx:id="discountGroup"/>
+    </fx:define>
+    <HBox spacing="80" alignment="TOP_CENTER">
+        <VBox spacing="10" alignment="TOP_LEFT">
+            <Label text="Foods"/>
+
+            <CheckBox fx:id="Pizza" text="Pizza - Php 100"/>
+            <CheckBox fx:id="Burger" text="Burger - Php 90"/>
+            <CheckBox fx:id="Fries" text="Fries - Php 65"/>
+            <CheckBox fx:id="Softdrinks" text="SoftDrinks - Php 55"/>
+            <CheckBox fx:id="Tea" text="Tea - Php 50"/>
+            <CheckBox fx:id="Sundae" text="Sundae - Php 40"/>
+        </VBox>
+        <VBox spacing="10" alignment="TOP_LEFT">
+        <Label text="Discounts"/>
+
+        <RadioButton fx:id="rbNone" text="None" toggleGroup="$discountGroup" selected="true"/>
+        <RadioButton fx:id="rb5" text="5% Off" toggleGroup="$discountGroup"/>
+        <RadioButton fx:id="rb10" text="10% Off" toggleGroup="$discountGroup"/>
+        <RadioButton fx:id="rb15" text="15% Off" toggleGroup="$discountGroup"/>
+        </VBox>
+    </HBox>
+    <Button text="Order" onAction="#handleOrder"/>
+</VBox>
